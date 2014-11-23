@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pink</title>
+        <meta charset="utf-8">        
+    </head>
+    <body>
+        <header class="header">
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__list-item"><a href="#">Информация</a></li>
+                    <li class="menu__list-item"><a href="#">Фото и видео</a></li>
+                    <li class="menu__list-item"><a href="#">Карта штата</a></li>
+                    <li class="menu__list-item"><a href="#">Гостиницы</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="reasons">
+                <p class="reasons__title">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
+                <p class="reasons__view">Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!</p>
+                <figure class="reasons__grand">
+                    <figcaption class="reasons__item">
+                        <p class="reasons__item-title">Настоящий городок</p>
+                        <p class="reasons__item-number">№1</p>
+                        <p class="reasons__item-explain">Седона не аттракцион для туристов, там течет своя жизнь</p>
+                    </figcaption>
+                    <img class="reasons__grand-img" src="img/pict-city.jpg">
+                </figure>
+                <div class="features">
+                    <div class="features__item">
+                        <img class="features__item-icon" src="img/icon-home.gif">
+                        <p class="features__item-title">Жилье</p>
+                        <p class="features__item-text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+                    </div>
+                    <div class="features__item">
+                        <img class="features__item-icon" src="img/icon-food.gif">
+                        <p class="features__item-title">Еда</p>
+                        <p class="features__item-text">Всегда заказывайте фирменный бургер, вы не разочаруютесь!</p>
+                    </div>
+                    <div class="features__item">
+                        <img class="features__item-icon" src="img/icon-gift.gif">
+                        <p class="features__item-title">Сувениры</p>
+                        <p class="features__item-text">Не только китейского, но и местного производства!</p>
+                    </div>
+                </div>
+                <figure class="reasons__grand">
+                    <figcaption class="reasons__item">
+                        <p class="reasons__item-title">Там есть Мост Дьявола</p>
+                        <p class="reasons__item-number">№2</p>
+                        <p class="reasons__item-explain">Да, по нему можно пройти! Если, конечно, вы осмелитесь</p>
+                    </figcaption>
+                    <img class="reasons__grand-img" src="img/pict-bridge.jpg">
+                </figure>
+                <div class="reasons__others">
+                    <div class="reasons__item">
+                        <p class="reasons__item-title">Небольшая площадь</p>
+                        <p class="reasons__item-number">№3</p>
+                        <p class="reasons__item-explain">Все достопримечательности находятся очень близко</p>
+                    </div><div class="reasons__item">
+                        <p class="reasons__item-title">Красивая дорога</p>
+                        <p class="reasons__item-number">№4</p>
+                        <p class="reasons__item-explain">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+                    </div>
+                    <div class="reasons__item">
+                        <p class="reasons__item-title">Мало туристов</p>
+                        <p class="reasons__item-number">№5</p>
+                        <p class="reasons__item-explain">Большинство едет в Гранд Каньон и толпится там</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ordering">
+                <p class="ordering__title">Заинтересовались?</p>
+                <p class="ordering__text">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+                <form class="ordering__form" action="#" method="post">
+                    <p class="ordering__form-head">Поиск гостиницы в Седоне</p>
+                    <label class="ordering__form-date">
+                        Дата заезда:
+                        <input type="date">
+                    </label>
+                    <label class="ordering__form-date">
+                        Датат выезда
+                        <input type="date">
+                    </label>
+                    <fieldset class="ordering__form-layout">
+                        <label class="ordering__form-number">
+                            Взрослые:
+                            <button class="ordering__form-counter">-</button>
+                            <input type="number" value="2">
+                            <button class="ordering__form-counter">+</button>
+                        </label>
+                        <label class="ordering__form-number">
+                            Дети:
+                            <button class="ordering__form-counter">-</button>
+                            <input type="number" value="0">
+                            <button class="ordering__form-counter">+</button>
+                        </label>
+                    </fieldset>
+                    <input class="ordering__form-btn" type="submit" value="Найти">
+                </form>
+            </div>
+        </main>
+        <footer class="footer">
+            <a class="hash-tag" href="#">#visitsedona</a>
+            <div class="social-btn">
+                <a class="social-btn-twitter" href="#"></a>
+                <a class="social-btn-fb" href="#"></a>
+                <a class="social-btn-play" href="#"></a>
+            </div>
+            <p class="footer__copyright">Website by <img src="img/icon-a.gif"> for <img src="img/icon-ha.gif"></p>
+        </footer>
+    </body>
+</html>
