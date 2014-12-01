@@ -1,0 +1,52 @@
+@import url("variables.less");
+
+
+.box-size (@width: auto; @margin-bottom: 10px; @padding: (@font-size * (20px / 14px)) 20px) {
+    display: block;
+    box-sizing: border-box;
+    width: @width;
+    margin-bottom: @margin-bottom;
+    padding: @padding;
+}
+
+.reset-ul (@list-style: none; @li-padding: 0; @li-margin: 0) {
+    list-style: @list-style;
+    margin: @li-margin;
+    padding: @li-padding;    
+}
+
+.reset-a () {
+    text-decoration: none;
+    color: inherit;
+}
+ 
+.clearfix () {
+    content:'';
+    display:table;
+    clear:both;
+}
+
+.background (@value) {
+    background+_: @value;
+    
+    & when (@value = @bg-main) {    
+        color: @color-dark;
+  }
+    & when (@value = @bg-second), (@value = @bg-third), (@value = @bg-order) {    
+        color: @color-light;
+  }    
+}
+
+.line-height (@a; @b) {
+    line-height: unit((@a / @b));
+}
+
+.title () {
+    font-size: @font-size--title;
+    .line-height (26px; 21px);
+    font-weight: bold;
+}
+
+.text-regular () {
+    .line-height (21px; 14px);
+}

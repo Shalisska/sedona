@@ -1,0 +1,219 @@
+@import url("variables.less");
+@import url("mixin.less");
+
+@bg-base: #f2f2f2;
+@bg-main: white;
+@bg-second: #81b3d2;
+@bg-third: #eee;
+@bg-order: #766357;
+@bg-footer: rgba(254, 254, 254, .9);
+@bg-shadow: rgba(0, 1, 1, .2);
+
+@font-size: 14px;
+@font-size--title: (@font-size * (21px / 14px));
+
+@font-family: "PT Sans", sans-serif;
+
+@color-dark: black;
+@color-dark--regular: #333;
+@color-light: white;
+
+@width-form: 568px;
+
+
+body {
+    background: @bg-base;
+    text-align: center;
+    font-family: @font-family;
+    font-size: @font-size;
+    text-transform: uppercase; 
+}
+
+.layout-center-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    .background (@bg-main);
+    .background (url("../img/bg-top.png") no-repeat center top);    
+    box-shadow: 0 5px 15px 0 @bg-shadow;
+}
+
+.header {
+    position: relative;
+    margin-bottom: 565px;
+    background: @bg-main;
+}
+
+.menu {
+    &__list {
+        .reset-ul ();
+        font-size: 0;
+        
+        &-item {
+            display: inline-block;
+            width: 20%;
+            
+            a {
+                .reset-a ();
+                display: block;                
+                padding: (@font-size * (15px / 14px)) 15px;
+                text-align: center;
+                font-size: @font-size;
+                .line-height (26px; 14px);
+                font-weight: bold;                
+            }
+            
+            .logo {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -10%;
+                padding: 0;
+                width: 20%;
+            }
+        }
+    }
+}
+
+.main {
+    
+}
+
+.reasons {
+    margin-bottom: 50px;
+    
+    &__title {
+        margin: 0 auto 35px;
+        width: 500px;
+        .title ();
+    }
+    
+    &__view {
+        margin-bottom: 50px;
+        .text-regular;
+    }
+    
+    &-layout {
+        .clearfix ();
+    }
+    
+    &-item {
+        float: left;
+        .box-size ((100% / 3); 0; 48px);        
+        
+        &--main {
+            .background (@bg-second);
+        }
+        
+        &--double {
+            padding: 0;
+            width: (100% / 3 * 2);
+        }
+        
+        &__title {
+            .title ();
+        }
+        
+        &__number,
+        &__text {
+            .text-regular ();
+        }
+    }
+}
+
+.ordering {
+    &__title {
+        margin-bottom: 30px;
+    }
+    
+    &__text {
+        margin-bottom: 50px;
+    }
+    
+    &-layout {
+        margin: 0 auto;
+        width: @width-form;        
+    }
+    
+    &__search {
+        padding: 30px;
+    }
+    
+    &-form {
+        padding: 50px;
+        
+        &__date {
+            .clearfix ();
+            margin-bottom: 29px;
+            width: 100%;
+        }
+        
+        &__lbl {
+            float: left;
+        }
+        
+        &__input--date {
+            float: right;
+            width: 73%;
+        }
+        
+        &__input {        
+            padding: 8px 12px;
+        }
+        
+        &-layout {
+            .clearfix ();
+            margin: 0 0 54px;
+            padding: 0;
+            border: 0;
+        }
+        
+        &__number {
+            width: 50%;            
+            
+            &:first-child {
+                float: left;
+            }
+            
+            &:last-child {
+                float: right;
+                text-align: right;
+            }            
+        }
+        
+        &__counter {
+            font-size: 0;
+            
+            button,
+            input {
+                padding: 8px;
+                width: 38px;                
+                font-size: @font-size;
+            }
+        }
+        
+        &__btn {
+            padding: 15px;
+            width: 100%;
+        }
+    }
+}
+
+
+
+.footer {
+    font-size: 0;
+    
+    .hash-tag-layout,
+    .social-btn,
+    &__copyright {
+        display: inline-block;
+        width: (100% / 3);
+        font-size: @font-size;
+    }
+}
+
+
+
+.social-btn {
+    
+}
