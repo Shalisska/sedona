@@ -31,9 +31,11 @@ body {
 
 .layout-center-wrapper {
     max-width: 1200px;
-    margin: 0 auto;
-    .background (@bg-main);
-    .background (url("../img/bg-top.png") no-repeat center top);    
+    margin: 0 auto;    
+    background:      
+      url("../img/bg-top.png") no-repeat center top,
+      @bg-main url("../img/pict-map.jpg") no-repeat center bottom;
+    
     box-shadow: 0 5px 15px 0 @bg-shadow;
 }
 
@@ -57,9 +59,7 @@ body {
                 display: block;                
                 padding: (@font-size * (15px / 14px)) 15px;
                 text-align: center;
-                font-size: @font-size;
-                .line-height (26px; 14px);
-                font-weight: bold;                
+                .text-form ();                
             }
             
             .logo {
@@ -90,32 +90,54 @@ body {
     &__view {
         margin-bottom: 50px;
         .text-regular;
+        color: @color-dark--regular;
     }
     
     &-layout {
         .clearfix ();
+        width: 100%;
     }
     
     &-item {
         float: left;
-        .box-size ((100% / 3); 0; 48px);        
+        .box-size ((100% / 3); 0; 45px 50px);
+        min-height: @height-item;
+        .background (@bg-third);
+        color: @color-dark--regular;
         
         &--main {
             .background (@bg-second);
+            
+            .reasons-item__title {
+                color: @color-light;
+            }
         }
         
         &--double {
             padding: 0;
             width: (100% / 3 * 2);
+            height: @height-item;
+            background: url("../img/pict-city.jpg") no-repeat center center;
+        }
+        
+        &--features {
+            padding: 56px 50px;
+            height: @height-features;
+            background: @bg-main;
         }
         
         &__title {
             .title ();
+            margin-bottom: 22px;
         }
         
         &__number,
         &__text {
             .text-regular ();
+        }
+        
+        &__icon {
+            
         }
     }
 }
@@ -123,10 +145,15 @@ body {
 .ordering {
     &__title {
         margin-bottom: 30px;
+        font-size: @font-size--title_order;
+        font-weight: bold;
     }
     
     &__text {
-        margin-bottom: 50px;
+        margin: 0 auto 45px;
+        width: 50%;
+        color: @color-dark--regular;
+        .line-height (24px; 14px);
     }
     
     &-layout {
@@ -135,11 +162,17 @@ body {
     }
     
     &__search {
+        margin: 0;
         padding: 30px;
+        background: @bg-order;
+        .title ();
+        color: @color-light;
     }
     
     &-form {
         padding: 50px;
+        background: @bg-main;
+        box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
         
         &__date {
             .clearfix ();
@@ -149,17 +182,30 @@ body {
         
         &__lbl {
             float: left;
+            margin: 6px 0;
+            .text-form ();
+        }
+        
+        &__input {        
+            padding: 5px 12px;
+            .btn-form ();
+            .text-form ();
         }
         
         &__input--date {
             float: right;
-            width: 73%;
+            position: relative;
+            width: 346px;
+            
+            &:before {
+                content: url("../img/icon-calendar.png");
+                position: absolute;
+                top: 50%;
+                margin-top: -11px;
+                right: 9px;                
+            }
         }
-        
-        &__input {        
-            padding: 8px 12px;
-        }
-        
+                
         &-layout {
             .clearfix ();
             margin: 0 0 54px;
@@ -168,32 +214,51 @@ body {
         }
         
         &__number {
-            width: 50%;            
+                        
             
             &:first-child {
                 float: left;
+                width: 236px;
+                text-align: right;                
             }
             
             &:last-child {
                 float: right;
+                width: 180px;
                 text-align: right;
             }            
         }
         
         &__counter {
             font-size: 0;
+            height: 38px;
             
             button,
-            input {
-                padding: 8px;
+            input {                
+                padding: 6px 0;
                 width: 38px;                
-                font-size: @font-size;
+                text-align: center;
+            }
+            
+            input {
+                .text-form ();                
+                font-weight: bold;
+            }
+            
+            button {
+                .btn-form ();                
+                color: rgba(0, 0, 0, .3);
+                .text-form ();
             }
         }
         
         &__btn {
             padding: 15px;
             width: 100%;
+            .btn-form ();
+            .title ();
+            .background (@bg-second);
+            text-transform: uppercase;
         }
     }
 }
@@ -201,6 +266,7 @@ body {
 
 
 .footer {
+    .background (@bg-footer);
     font-size: 0;
     
     .hash-tag-layout,
@@ -209,6 +275,39 @@ body {
         display: inline-block;
         width: (100% / 3);
         font-size: @font-size;
+    }
+    
+    .hash-tag {
+        .reset-a ();
+        .title ();
+    }
+    
+    .social-btn {
+        a {
+            display: inline-block;
+            width: 46px;
+            height: 48px;
+            background-color: @bg-second;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        &-twitter {
+            background-image: url("../img/icon-twitter.png");
+        }
+        
+        &-fb {
+            background-image: url("../img/icon-fb.png");
+        }
+        
+        &-play {
+            background-image: url("../img/icon-play.png");
+        }
+    }
+    
+    &__copyright {
+        .text-form ();
+        vertical-align: middle;
     }
 }
 
