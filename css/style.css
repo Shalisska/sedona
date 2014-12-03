@@ -244,6 +244,8 @@ body {
   text-transform: uppercase;
 }
 .footer {
+  margin-top: 78px;
+  padding: 36px 0;
   background: rgba(254, 254, 254, 0.9);
   color: #000000;
   font-size: 0;
@@ -254,6 +256,7 @@ body {
   display: inline-block;
   width: 33.33333333%;
   font-size: 14px;
+  vertical-align: middle;
 }
 .footer .hash-tag {
   text-decoration: none;
@@ -281,9 +284,18 @@ body {
   background-image: url("../img/icon-play.png");
 }
 .footer__copyright {
-  font-size: 14px;
-  line-height: 1.85714286;
-  font-weight: bold;
   text-transform: uppercase;
+}
+.footer__copyright a {
+  display: inline-block;
+  margin: 0 13px;
+  width: 27px;
+  height: 33px;
   vertical-align: middle;
+}
+.footer__copyright-a {
+  background: url("../img/icon-a.png");
+}
+.footer__copyright-ha {
+  background: url("../img/icon-ha.png");
 }

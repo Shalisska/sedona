@@ -266,6 +266,8 @@ body {
 
 
 .footer {
+    margin-top: (@font-size * (78px / 14px));
+    padding: (@font-size * (36px / 14px)) 0;
     .background (@bg-footer);
     font-size: 0;
     
@@ -275,6 +277,7 @@ body {
         display: inline-block;
         width: (100% / 3);
         font-size: @font-size;
+        vertical-align: middle;
     }
     
     .hash-tag {
@@ -305,9 +308,24 @@ body {
         }
     }
     
-    &__copyright {
-        .text-form ();
-        vertical-align: middle;
+    &__copyright {        
+        text-transform: uppercase;
+        
+        & a {
+            display: inline-block;
+            margin: 0 13px;
+            width: 27px;
+            height: 33px;
+            vertical-align: middle;
+        }
+                
+        &-a {            
+            background: url("../img/icon-a.png");            
+        }
+        
+        &-ha {
+            background: url("../img/icon-ha.png");
+        }
     }
 }
 

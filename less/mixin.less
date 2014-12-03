@@ -27,12 +27,12 @@
 }
 
 .background (@value) {
-    background+_: @value;
+    background+: @value;
     
-    & when (@value = @bg-main) {    
+    & when (@value = @bg-main), (@value = @bg-third), (@value = @bg-footer) {    
         color: @color-dark;
   }
-    & when (@value = @bg-second), (@value = @bg-third), (@value = @bg-order) {    
+    & when (@value = @bg-second), (@value = @bg-order) {    
         color: @color-light;
   }    
 }
@@ -41,7 +41,15 @@
     line-height: unit((@a / @b));
 }
 
+.text-form () {
+    font-size: @font-size;
+    .line-height (26px; 14px);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .title () {
+    color: @color-dark;
     font-size: @font-size--title;
     .line-height (26px; 21px);
     font-weight: bold;
@@ -49,4 +57,10 @@
 
 .text-regular () {
     .line-height (21px; 14px);
+}
+
+.btn-form () {
+    box-sizing: border-box;
+    background: @bg-base;
+    border: none;
 }
