@@ -1,26 +1,6 @@
 @import url("variables.less");
 @import url("mixin.less");
 
-@bg-base: #f2f2f2;
-@bg-main: white;
-@bg-second: #81b3d2;
-@bg-third: #eee;
-@bg-order: #766357;
-@bg-footer: rgba(254, 254, 254, .9);
-@bg-shadow: rgba(0, 1, 1, .2);
-
-@font-size: 14px;
-@font-size--title: (@font-size * (21px / 14px));
-
-@font-family: "PT Sans", sans-serif;
-
-@color-dark: black;
-@color-dark--regular: #333;
-@color-light: white;
-
-@width-form: 568px;
-
-
 body {
     background: @bg-base;
     text-align: center;
@@ -30,13 +10,24 @@ body {
 }
 
 .layout-center-wrapper {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;    
     background:      
-      url("../img/bg-top.png") no-repeat center top,
-      @bg-main url("../img/pict-map.jpg") no-repeat center bottom;
-    
+      url("../img/bg-top.jpg") no-repeat center top,
+      @bg-main url("../img/pict-map.jpg") no-repeat center bottom;    
     box-shadow: 0 5px 15px 0 @bg-shadow;
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: 507px;
+        left: 0;
+        width: 100%;
+        height: 57px;
+        background: url("../img/bg-top-mask.png") no-repeat center bottom;
+        background-size: 100%;
+    }
 }
 
 .header {
@@ -57,7 +48,7 @@ body {
             a {
                 .reset-a ();
                 display: block;                
-                padding: (@font-size * (15px / 14px)) 15px;
+                padding: (@font-size * (15px / 14px)) 1%;
                 text-align: center;
                 .text-form ();                
             }
@@ -79,16 +70,16 @@ body {
 }
 
 .reasons {
-    margin-bottom: 50px;
+    margin-bottom: (@font-size * (50px / 14px));
     
     &__title {
-        margin: 0 auto 35px;
-        width: 500px;
+        margin: 0 auto (@font-size * (35px / 14px));
+        width: 40%;
         .title ();
     }
     
     &__view {
-        margin-bottom: 50px;
+        margin-bottom: (@font-size * (50px / 14px));
         .text-regular;
         color: @color-dark--regular;
     }
@@ -100,7 +91,7 @@ body {
     
     &-item {
         float: left;
-        .box-size ((100% / 3); 0; 45px 50px);
+        .box-size ((100% / 3); 0; 4.37%);
         min-height: @height-item;
         .background (@bg-third);
         color: @color-dark--regular;
@@ -117,18 +108,28 @@ body {
             padding: 0;
             width: (100% / 3 * 2);
             height: @height-item;
-            background: url("../img/pict-city.jpg") no-repeat center center;
+            background-repeat: no-repeat;
+            background-position: center center;
+            
+            &:first-of-type {
+                background-image: url("../img/pict-bridge.jpg");
+            }
+            
+            &:last-of-type {
+                background-image: url("../img/pict-city.jpg");
+            }
         }
         
         &--features {
-            padding: 56px 50px;
+            padding: 4.66% 4.16%;
             height: @height-features;
             background: @bg-main;
         }
         
         &__title {
             .title ();
-            margin-bottom: 22px;
+            margin: 0 0 (@font-size * (22px / 14px));
+            
         }
         
         &__number,
@@ -136,21 +137,25 @@ body {
             .text-regular ();
         }
         
+        &__text {
+            margin-bottom: 0;
+        }
+        
         &__icon {
-            
+            margin-bottom: (@font-size * (30px / 14px));
         }
     }
 }
 
 .ordering {
     &__title {
-        margin-bottom: 30px;
+        margin-bottom: (@font-size * (30px / 14px));
         font-size: @font-size--title_order;
         font-weight: bold;
     }
     
     &__text {
-        margin: 0 auto 45px;
+        margin: 0 auto (@font-size * (45px / 14px));
         width: 50%;
         color: @color-dark--regular;
         .line-height (24px; 14px);
@@ -163,34 +168,34 @@ body {
     
     &__search {
         margin: 0;
-        padding: 30px;
+        padding: (@font-size * (30px / 14px)) 2%;
         background: @bg-order;
         .title ();
         color: @color-light;
     }
     
     &-form {
-        padding: 50px;
+        padding: (@font-size * (50px / 14px)) 8.8%;
         background: @bg-main;
         box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
         
         &__date {
             .clearfix ();
-            margin-bottom: 29px;
+            margin-bottom: (@font-size * (29px / 14px));
             width: 100%;
         }
         
         &__lbl {
             box-sizing: border-box;
             float: left;
-            margin: 6px 0;
+            margin: (@font-size * (6px / 14px)) 0;
             width: 25%;
             .text-form ();
             text-align: left;
         }
         
         &__input {        
-            padding: 5px 12px;
+            padding: (@font-size * (5px / 14px)) 2.56%;
             .btn-form ();
             .text-form ();
         }
@@ -199,6 +204,7 @@ body {
             float: right;
             position: relative;
             width: 75%;
+            padding-right: 38px;
             
             &:before {
                 content: url("../img/icon-calendar.png");
@@ -211,7 +217,7 @@ body {
                 
         &-layout {
             .clearfix ();
-            margin: 0 0 54px;
+            margin: 0 0 (@font-size * (54px / 14px));
             padding: 0;
             border: 0;
         }
@@ -221,13 +227,11 @@ body {
             
             &:first-child {
                 float: left;
-                //width: 236px;
                 text-align: right;                
             }
             
             &:last-child {
                 float: right;
-                //width: 180px;
                 text-align: right;
             }
             
@@ -235,7 +239,7 @@ body {
                 width: 50%;
                 
                 &--child {
-                    padding-left: 50px;
+                    padding-left: 21.36%;
                 }
             } 
         }
@@ -243,7 +247,7 @@ body {
         &__counter {
             float: right;
             font-size: 0;
-            height: 38px;
+            height: (@font-size * (38px / 14px));
             width: 50%;
             
             button,
@@ -254,7 +258,7 @@ body {
             }
             
             input {
-                padding: 6px 0;
+                padding: (@font-size * (6px / 14px)) 0;
                 .text-form (); 
             }
             
@@ -262,14 +266,14 @@ body {
                 .btn-form ();
                 padding: 0;
                 color: rgba(0, 0, 0, .3);
-                font-size: 21px;
+                font-size: (@font-size * (21px / 14px));
                 .line-height (26px; 14px);
                 font-weight: bold;
             }
         }
         
         &__btn {
-            padding: 15px;
+            padding: (@font-size * (15px / 14px)) 2%;
             width: 100%;
             .btn-form ();
             .title ();
