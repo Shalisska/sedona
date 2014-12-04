@@ -150,12 +150,17 @@ body {
   width: 100%;
 }
 .ordering-form__lbl {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   float: left;
   margin: 6px 0;
+  width: 25%;
   font-size: 14px;
   line-height: 1.85714286;
   font-weight: bold;
   text-transform: uppercase;
+  text-align: left;
 }
 .ordering-form__input {
   padding: 5px 12px;
@@ -172,7 +177,7 @@ body {
 .ordering-form__input--date {
   float: right;
   position: relative;
-  width: 346px;
+  width: 75%;
 }
 .ordering-form__input--date:before {
   content: url("../img/icon-calendar.png");
@@ -189,31 +194,41 @@ body {
   padding: 0;
   border: 0;
 }
+.ordering-form__number {
+  width: 50%;
+}
 .ordering-form__number:first-child {
   float: left;
-  width: 236px;
   text-align: right;
 }
 .ordering-form__number:last-child {
   float: right;
-  width: 180px;
   text-align: right;
 }
+.ordering-form__number .ordering-form__lbl {
+  width: 50%;
+}
+.ordering-form__number .ordering-form__lbl--child {
+  padding-left: 50px;
+}
 .ordering-form__counter {
+  float: right;
   font-size: 0;
   height: 38px;
+  width: 50%;
 }
 .ordering-form__counter button,
 .ordering-form__counter input {
-  padding: 6px 0;
-  width: 38px;
+  width: 33.33333333%;
+  vertical-align: middle;
   text-align: center;
 }
 .ordering-form__counter input {
+  padding: 6px 0;
   font-size: 14px;
   line-height: 1.85714286;
-  text-transform: uppercase;
   font-weight: bold;
+  text-transform: uppercase;
 }
 .ordering-form__counter button {
   -webkit-box-sizing: border-box;
@@ -221,11 +236,11 @@ body {
   box-sizing: border-box;
   background: #f2f2f2;
   border: none;
+  padding: 0;
   color: rgba(0, 0, 0, 0.3);
-  font-size: 14px;
+  font-size: 21px;
   line-height: 1.85714286;
   font-weight: bold;
-  text-transform: uppercase;
 }
 .ordering-form__btn {
   padding: 15px;

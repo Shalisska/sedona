@@ -181,9 +181,12 @@ body {
         }
         
         &__lbl {
+            box-sizing: border-box;
             float: left;
             margin: 6px 0;
+            width: 25%;
             .text-form ();
+            text-align: left;
         }
         
         &__input {        
@@ -195,7 +198,7 @@ body {
         &__input--date {
             float: right;
             position: relative;
-            width: 346px;
+            width: 75%;
             
             &:before {
                 content: url("../img/icon-calendar.png");
@@ -214,41 +217,54 @@ body {
         }
         
         &__number {
-                        
+            width: 50%;            
             
             &:first-child {
                 float: left;
-                width: 236px;
+                //width: 236px;
                 text-align: right;                
             }
             
             &:last-child {
                 float: right;
-                width: 180px;
+                //width: 180px;
                 text-align: right;
-            }            
+            }
+            
+            .ordering-form__lbl {
+                width: 50%;
+                
+                &--child {
+                    padding-left: 50px;
+                }
+            } 
         }
         
         &__counter {
+            float: right;
             font-size: 0;
             height: 38px;
+            width: 50%;
             
             button,
-            input {                
-                padding: 6px 0;
-                width: 38px;                
+            input {
+                width: (100% / 3);
+                vertical-align: middle;
                 text-align: center;
             }
             
             input {
-                .text-form ();                
-                font-weight: bold;
+                padding: 6px 0;
+                .text-form (); 
             }
             
             button {
-                .btn-form ();                
+                .btn-form ();
+                padding: 0;
                 color: rgba(0, 0, 0, .3);
-                .text-form ();
+                font-size: 21px;
+                .line-height (26px; 14px);
+                font-weight: bold;
             }
         }
         
