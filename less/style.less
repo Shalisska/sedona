@@ -13,9 +13,9 @@ body {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;    
-    background:      
-      url("../img/bg-top.jpg") no-repeat center top,
-      @bg-main url("../img/pict-map.jpg") no-repeat center bottom;    
+    .background (url("../img/bg-top.jpg") no-repeat center top);
+    .background (url("../img/pict-map.jpg") no-repeat center bottom);
+    .background (@bg-main);
     box-shadow: 0 5px 15px 0 @bg-shadow;
     
     &:before {

@@ -9,7 +9,8 @@ body {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  background: url("../img/bg-top.jpg") no-repeat center top, #ffffff url("../img/pict-map.jpg") no-repeat center bottom;
+  background: url("../img/bg-top.jpg") no-repeat center top, url("../img/pict-map.jpg") no-repeat center bottom, #ffffff;
+  color: #000000;
   -webkit-box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
   box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
 }
