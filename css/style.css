@@ -1,0 +1,316 @@
+body {
+  background: #f2f2f2;
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.layout-center-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: url("../img/bg-top.png") no-repeat center top, #ffffff url("../img/pict-map.jpg") no-repeat center bottom;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+  box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
+}
+.header {
+  position: relative;
+  margin-bottom: 565px;
+  background: #ffffff;
+}
+.menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+.menu__list-item {
+  display: inline-block;
+  width: 20%;
+}
+.menu__list-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 15px 15px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.85714286;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.menu__list-item .logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -10%;
+  padding: 0;
+  width: 20%;
+}
+.reasons {
+  margin-bottom: 50px;
+}
+.reasons__title {
+  margin: 0 auto 35px;
+  width: 500px;
+  color: #000000;
+  font-size: 21px;
+  line-height: 1.23809524;
+  font-weight: bold;
+}
+.reasons__view {
+  margin-bottom: 50px;
+  line-height: 1.5;
+  color: #333333;
+}
+.reasons-layout {
+  content: '';
+  display: table;
+  clear: both;
+  width: 100%;
+}
+.reasons-item {
+  float: left;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333333%;
+  margin-bottom: 0;
+  padding: 45px 50px;
+  min-height: 256px;
+  background: #eeeeee;
+  color: #000000;
+  color: #333333;
+}
+.reasons-item--main {
+  background: #81b3d2;
+  color: #ffffff;
+}
+.reasons-item--main .reasons-item__title {
+  color: #ffffff;
+}
+.reasons-item--double {
+  padding: 0;
+  width: 66.66666667%;
+  height: 256px;
+  background: url("../img/pict-city.jpg") no-repeat center center;
+}
+.reasons-item--features {
+  padding: 56px 50px;
+  height: 300px;
+  background: #ffffff;
+}
+.reasons-item__title {
+  color: #000000;
+  font-size: 21px;
+  line-height: 1.23809524;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+.reasons-item__number,
+.reasons-item__text {
+  line-height: 1.5;
+}
+.ordering__title {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.ordering__text {
+  margin: 0 auto 45px;
+  width: 50%;
+  color: #333333;
+  line-height: 1.71428571;
+}
+.ordering-layout {
+  margin: 0 auto;
+  width: 568px;
+}
+.ordering__search {
+  margin: 0;
+  padding: 30px;
+  background: #766357;
+  color: #000000;
+  font-size: 21px;
+  line-height: 1.23809524;
+  font-weight: bold;
+  color: #ffffff;
+}
+.ordering-form {
+  padding: 50px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
+  box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
+}
+.ordering-form__date {
+  content: '';
+  display: table;
+  clear: both;
+  margin-bottom: 29px;
+  width: 100%;
+}
+.ordering-form__lbl {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin: 6px 0;
+  width: 25%;
+  font-size: 14px;
+  line-height: 1.85714286;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+}
+.ordering-form__input {
+  padding: 5px 12px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  border: none;
+  font-size: 14px;
+  line-height: 1.85714286;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ordering-form__input--date {
+  float: right;
+  position: relative;
+  width: 75%;
+}
+.ordering-form__input--date:before {
+  content: url("../img/icon-calendar.png");
+  position: absolute;
+  top: 50%;
+  margin-top: -11px;
+  right: 9px;
+}
+.ordering-form-layout {
+  content: '';
+  display: table;
+  clear: both;
+  margin: 0 0 54px;
+  padding: 0;
+  border: 0;
+}
+.ordering-form__number {
+  width: 50%;
+}
+.ordering-form__number:first-child {
+  float: left;
+  text-align: right;
+}
+.ordering-form__number:last-child {
+  float: right;
+  text-align: right;
+}
+.ordering-form__number .ordering-form__lbl {
+  width: 50%;
+}
+.ordering-form__number .ordering-form__lbl--child {
+  padding-left: 50px;
+}
+.ordering-form__counter {
+  float: right;
+  font-size: 0;
+  height: 38px;
+  width: 50%;
+}
+.ordering-form__counter button,
+.ordering-form__counter input {
+  width: 33.33333333%;
+  vertical-align: middle;
+  text-align: center;
+}
+.ordering-form__counter input {
+  padding: 6px 0;
+  font-size: 14px;
+  line-height: 1.85714286;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ordering-form__counter button {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  border: none;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 21px;
+  line-height: 1.85714286;
+  font-weight: bold;
+}
+.ordering-form__btn {
+  padding: 15px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  border: none;
+  color: #000000;
+  font-size: 21px;
+  line-height: 1.23809524;
+  font-weight: bold;
+  background: #81b3d2;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.footer {
+  margin-top: 78px;
+  padding: 36px 0;
+  background: rgba(254, 254, 254, 0.9);
+  color: #000000;
+  font-size: 0;
+}
+.footer .hash-tag-layout,
+.footer .social-btn,
+.footer__copyright {
+  display: inline-block;
+  width: 33.33333333%;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.footer .hash-tag {
+  text-decoration: none;
+  color: inherit;
+  color: #000000;
+  font-size: 21px;
+  line-height: 1.23809524;
+  font-weight: bold;
+}
+.footer .social-btn a {
+  display: inline-block;
+  width: 46px;
+  height: 48px;
+  background-color: #81b3d2;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.footer .social-btn-twitter {
+  background-image: url("../img/icon-twitter.png");
+}
+.footer .social-btn-fb {
+  background-image: url("../img/icon-fb.png");
+}
+.footer .social-btn-play {
+  background-image: url("../img/icon-play.png");
+}
+.footer__copyright {
+  text-transform: uppercase;
+}
+.footer__copyright a {
+  display: inline-block;
+  margin: 0 13px;
+  width: 27px;
+  height: 33px;
+  vertical-align: middle;
+}
+.footer__copyright-a {
+  background: url("../img/icon-a.png");
+}
+.footer__copyright-ha {
+  background: url("../img/icon-ha.png");
+}
