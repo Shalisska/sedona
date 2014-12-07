@@ -37,7 +37,7 @@ body {
   width: 100%;
   margin: -56px 0 60px;
   padding-top: 132px;
-  background: url("../img/bg-top1.jpg") no-repeat center top;
+  background: url("../img/bg-top.jpg") no-repeat center top;
 }
 .bg-sedona:before {
   content: '';
@@ -168,7 +168,7 @@ body {
   width: 76px;
   height: 76px;
   margin: 0 auto 35px;
-  background: url("../img/icon-house1.svg") no-repeat center bottom;
+  background: url("../img/icon-house.svg") no-repeat center bottom;
 }
 .reasons-item--features-food:before {
   content: '';
@@ -176,7 +176,7 @@ body {
   width: 76px;
   height: 76px;
   margin: 0 auto 35px;
-  background: url("../img/icon-burger1.svg") no-repeat center bottom;
+  background: url("../img/icon-burger.svg") no-repeat center bottom;
 }
 .reasons-item--features-gift:before {
   content: '';
@@ -184,7 +184,7 @@ body {
   width: 76px;
   height: 76px;
   margin: 0 auto 35px;
-  background: url("../img/icon-gift1.svg") no-repeat center bottom;
+  background: url("../img/icon-gift.svg") no-repeat center bottom;
 }
 .reasons-item__title {
   color: #000000;
