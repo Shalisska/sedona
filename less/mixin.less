@@ -64,3 +64,14 @@
     background: @bg-base;
     border: none;
 }
+
+.features-icon (@icon) {
+    &:before {
+        content: '';
+        display: block;
+        width: 76px;
+        height: 76px;
+        margin: 0 auto (@font-size * (35px / 14px));
+        background: url(@icon) no-repeat center bottom;
+    }
+}

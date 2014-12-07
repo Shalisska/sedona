@@ -6,18 +6,43 @@ body {
   text-transform: uppercase;
 }
 .layout-center-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  background: url("../img/bg-top.jpg") no-repeat center top, url("../img/pict-map.jpg") no-repeat center bottom, #ffffff;
+  background: url("../img/pict-map.jpg") no-repeat center bottom, #ffffff;
   color: #000000;
   -webkit-box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
   box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
 }
-.layout-center-wrapper:before {
+.bg-sedona {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin: -56px 0 60px;
+  padding-top: 132px;
+  background: url("../img/bg-top1.jpg") no-repeat center top;
+}
+.bg-sedona:before {
   content: '';
   position: absolute;
-  top: 507px;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 57px;
@@ -25,39 +50,59 @@ body {
   -webkit-background-size: 100%;
   background-size: 100%;
 }
+.bg-sedona__welcome {
+  margin-bottom: 10px;
+}
+.bg-sedona__to-the {
+  margin-bottom: 52px;
+}
+.bg-sedona__sedona {
+  margin-bottom: 56px;
+}
+.bg-sedona__because {
+  margin-bottom: 82px;
+}
 .header {
-  position: relative;
-  margin-bottom: 565px;
   background: #ffffff;
+  z-index: 20;
 }
 .menu__list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0;
 }
 .menu__list-item {
-  display: inline-block;
-  width: 20%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 .menu__list-item a {
   text-decoration: none;
   color: inherit;
   display: block;
-  padding: 15px 1%;
-  text-align: center;
+  padding: 15px 0;
   font-size: 14px;
   line-height: 1.85714286;
   font-weight: bold;
   text-transform: uppercase;
 }
-.menu__list-item .logo {
+.logo {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -10%;
-  padding: 0;
-  width: 20%;
+  margin-left: -69px;
+  width: 138px;
+  height: 70px;
+  background: url("../img/label.png") no-repeat center top;
 }
 .reasons {
   margin-bottom: 50px;
@@ -76,19 +121,17 @@ body {
   color: #333333;
 }
 .reasons-layout {
-  content: '';
-  display: table;
-  clear: both;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
 }
 .reasons-item {
-  float: left;
-  display: block;
+  width: 33.33333333%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 33.33333333%;
-  margin-bottom: 0;
   padding: 4.37%;
   min-height: 256px;
   background: #eeeeee;
@@ -103,7 +146,6 @@ body {
   color: #ffffff;
 }
 .reasons-item--double {
-  padding: 0;
   width: 66.66666667%;
   height: 256px;
   background-repeat: no-repeat;
@@ -120,6 +162,30 @@ body {
   height: 300px;
   background: #ffffff;
 }
+.reasons-item--features-house:before {
+  content: '';
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 35px;
+  background: url("../img/icon-house1.svg") no-repeat center bottom;
+}
+.reasons-item--features-food:before {
+  content: '';
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 35px;
+  background: url("../img/icon-burger1.svg") no-repeat center bottom;
+}
+.reasons-item--features-gift:before {
+  content: '';
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 35px;
+  background: url("../img/icon-gift1.svg") no-repeat center bottom;
+}
 .reasons-item__title {
   color: #000000;
   font-size: 21px;
@@ -133,9 +199,6 @@ body {
 }
 .reasons-item__text {
   margin-bottom: 0;
-}
-.reasons-item__icon {
-  margin-bottom: 30px;
 }
 .ordering__title {
   margin-bottom: 30px;

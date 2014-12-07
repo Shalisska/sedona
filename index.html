@@ -10,21 +10,29 @@
     </head>
     <body>
         <div class="layout-center-wrapper">
+            
             <header class="header">
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__list-item"><a href="#">Информация</a></li>
                         <li class="menu__list-item"><a href="#">Фото и видео</a></li>
-                        <li class="menu__list-item"><a class="logo" href="#"><img src="../img/label.png" alt="Sedona"></a></li>
+                        <li class="menu__list-item menu__list-item--empty"></li>
                         <li class="menu__list-item"><a href="#">Карта штата</a></li>
                         <li class="menu__list-item"><a href="#">Гостиницы</a></li>
                     </ul>
                 </nav>
+                <a class="logo" href="#"></a>
             </header>
 
 
 
             <main class="main">
+                <figure class="bg-sedona">
+                <img class="bg-sedona__welcome" src="../img/text-welcome.svg" alt="">
+                <img class="bg-sedona__to-the" src="../img/text-tothegorgeous.svg" alt="">
+                <img class="bg-sedona__sedona" src="../img/text-sedona.svg" alt="">
+                <img class="bg-sedona__because" src="../img/text-becausecanyon.svg" alt="">
+                </figure>
                 <div class="reasons">
                     <p class="reasons__title">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
                     <p class="reasons__view">Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!</p>
@@ -43,19 +51,16 @@
 
                     <div class="reasons-layout">
                         <div class="reasons-item  reasons-item--features">
-                            <img class="reasons-item__icon" src="img/icon-home.png">
-                            <p class="reasons-item__title">Жилье</p>
+                            <p class="reasons-item__title reasons-item--features-house">Жилье</p>
                             <p class="reasons-item__text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
                         </div>
 
                         <div class="reasons-item  reasons-item--features">
-                            <img class="reasons-item__icon" src="img/icon-food.png">
-                            <p class="reasons-item__title">Еда</p>
+                            <p class="reasons-item__title reasons-item--features-food">Еда</p>
                             <p class="reasons-item__text">Всегда заказывайте фирменный бургер, вы не разочаруютесь!</p>
                         </div>
 
-                        <div class="reasons-item  reasons-item--features">
-                            <img class="reasons-item__icon" src="img/icon-gift.png">
+                        <div class="reasons-item  reasons-item--features reasons-item--features-gift">
                             <p class="reasons-item__title">Сувениры</p>
                             <p class="reasons-item__text">Не только китайского, но и местного производства!</p>
                         </div>
