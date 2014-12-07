@@ -14,22 +14,9 @@ body {
     flex-direction: column;
     position: relative;
     max-width: 1200px;
-    margin: 0 auto;    
-    //.background (url("../img/bg-top.jpg") no-repeat center top);
-    .background (url("../img/pict-map.jpg") no-repeat center bottom);
+    margin: 0 auto;
     .background (@bg-main);
-    box-shadow: 0 5px 15px 0 @bg-shadow;
-    
-//    &:before {
-//        content: '';
-//        position: absolute;
-//        top: 507px;
-//        left: 0;
-//        width: 100%;
-//        height: 57px;
-//        background: url("../img/bg-top-mask.png") no-repeat center bottom;
-//        background-size: 100%;
-//    }
+    box-shadow: 0 5px 15px 0 @bg-shadow;    
 }
 
 .bg-sedona {
@@ -220,6 +207,16 @@ body {
         color: @color-light;
     }
     
+    
+    &__map {
+        position: relative;
+        margin: 0;
+        
+        &-img {
+            
+        }
+    }
+    
     &-form {
         padding: (@font-size * (50px / 14px)) 8.8%;
         background: @bg-main;
@@ -326,7 +323,7 @@ body {
             .background (@bg-second);
             text-transform: uppercase;
         }
-    }
+    }    
 }
 
 

@@ -18,7 +18,7 @@ body {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  background: url("../img/pict-map.jpg") no-repeat center bottom, #ffffff;
+  background: #ffffff;
   color: #000000;
   -webkit-box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
   box-shadow: 0 5px 15px 0 rgba(0, 1, 1, 0.2);
@@ -224,6 +224,10 @@ body {
   line-height: 1.23809524;
   font-weight: bold;
   color: #ffffff;
+}
+.ordering__map {
+  position: relative;
+  margin: 0;
 }
 .ordering-form {
   padding: 50px 8.8%;
