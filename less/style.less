@@ -99,7 +99,7 @@ body {
     
     &__title {
         margin: 0 auto (@font-size * (35px / 14px));
-        width: 40%;
+        width: 50%;
         .title ();
     }
     
@@ -211,26 +211,32 @@ body {
     &__map {
         position: relative;
         margin: 0;
+        //background: url("../img/pict-map.jpg") no-repeat center;
         
         &-img {
-            
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -600px;
         }
     }
     
     &-form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
         padding: (@font-size * (50px / 14px)) 8.8%;
         background: @bg-main;
         box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
         
         &__date {
-            .clearfix ();
+            display: flex;
             margin-bottom: (@font-size * (29px / 14px));
             width: 100%;
         }
         
         &__lbl {
             box-sizing: border-box;
-            float: left;
             margin: (@font-size * (6px / 14px)) 0;
             width: 25%;
             .text-form ();
@@ -244,38 +250,30 @@ body {
         }
         
         &__input--date {
-            float: right;
             position: relative;
             width: 75%;
             padding-right: 38px;
-            
-            &:before {
-                content: url("../img/icon-calendar.png");
-                position: absolute;
-                top: 50%;
-                margin-top: -11px;
-                right: 9px;                
-            }
+            background-image: url("../img/icon-calendar.svg");
+            background-repeat: no-repeat;
+            background-position: 97% center;            
         }
                 
         &-layout {
-            .clearfix ();
             margin: 0 0 (@font-size * (54px / 14px));
             padding: 0;
             border: 0;
         }
         
         &__number {
-            width: 50%;            
+            display: flex;
+            width: 50%;
             
             &:first-child {
                 float: left;
-                text-align: right;                
             }
             
             &:last-child {
                 float: right;
-                text-align: right;
             }
             
             .ordering-form__lbl {
@@ -288,23 +286,16 @@ body {
         }
         
         &__counter {
-            float: right;
-            font-size: 0;
+            display: flex;
             height: (@font-size * (38px / 14px));
             width: 50%;
             
             button,
             input {
                 width: (100% / 3);
-                vertical-align: middle;
                 text-align: center;
             }
-            
-            input {
-                padding: (@font-size * (6px / 14px)) 0;
-                .text-form (); 
-            }
-            
+                        
             button {
                 .btn-form ();
                 padding: 0;
@@ -329,6 +320,7 @@ body {
 
 
 .footer {
+    position: relative;
     margin-top: (@font-size * (78px / 14px));
     padding: (@font-size * (36px / 14px)) 0;
     .background (@bg-footer);

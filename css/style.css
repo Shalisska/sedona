@@ -109,7 +109,7 @@ body {
 }
 .reasons__title {
   margin: 0 auto 35px;
-  width: 40%;
+  width: 50%;
   color: #000000;
   font-size: 21px;
   line-height: 1.23809524;
@@ -229,16 +229,33 @@ body {
   position: relative;
   margin: 0;
 }
+.ordering__map-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -600px;
+}
 .ordering-form {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding: 50px 8.8%;
   background: #ffffff;
   -webkit-box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
   box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
 }
 .ordering-form__date {
-  content: '';
-  display: table;
-  clear: both;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-bottom: 29px;
   width: 100%;
 }
@@ -246,7 +263,6 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  float: left;
   margin: 6px 0;
   width: 25%;
   font-size: 14px;
@@ -268,36 +284,30 @@ body {
   text-transform: uppercase;
 }
 .ordering-form__input--date {
-  float: right;
   position: relative;
   width: 75%;
   padding-right: 38px;
-}
-.ordering-form__input--date:before {
-  content: url("../img/icon-calendar.png");
-  position: absolute;
-  top: 50%;
-  margin-top: -11px;
-  right: 9px;
+  background-image: url("../img/icon-calendar.svg");
+  background-repeat: no-repeat;
+  background-position: 97% center;
 }
 .ordering-form-layout {
-  content: '';
-  display: table;
-  clear: both;
   margin: 0 0 54px;
   padding: 0;
   border: 0;
 }
 .ordering-form__number {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   width: 50%;
 }
 .ordering-form__number:first-child {
   float: left;
-  text-align: right;
 }
 .ordering-form__number:last-child {
   float: right;
-  text-align: right;
 }
 .ordering-form__number .ordering-form__lbl {
   width: 50%;
@@ -306,23 +316,17 @@ body {
   padding-left: 21.36%;
 }
 .ordering-form__counter {
-  float: right;
-  font-size: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 38px;
   width: 50%;
 }
 .ordering-form__counter button,
 .ordering-form__counter input {
   width: 33.33333333%;
-  vertical-align: middle;
   text-align: center;
-}
-.ordering-form__counter input {
-  padding: 6px 0;
-  font-size: 14px;
-  line-height: 1.85714286;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 .ordering-form__counter button {
   -webkit-box-sizing: border-box;
@@ -353,6 +357,7 @@ body {
   text-transform: uppercase;
 }
 .footer {
+  position: relative;
   margin-top: 78px;
   padding: 36px 0;
   background: rgba(254, 254, 254, 0.9);
