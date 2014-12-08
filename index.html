@@ -13,6 +13,7 @@
             
             <header class="header">
                 <nav class="menu">
+                    <a class="menu__btn" href="#"></a>
                     <ul class="menu__list">
                         <li class="menu__list-item"><a href="#">Информация</a></li>
                         <li class="menu__list-item"><a href="#">Фото и видео</a></li>
@@ -60,8 +61,8 @@
                             <p class="reasons-item__text">Всегда заказывайте фирменный бургер, вы не разочаруютесь!</p>
                         </div>
 
-                        <div class="reasons-item  reasons-item--features reasons-item--features-gift">
-                            <p class="reasons-item__title">Сувениры</p>
+                        <div class="reasons-item  reasons-item--features">
+                            <p class="reasons-item__title reasons-item--features-gift">Сувениры</p>
                             <p class="reasons-item__text">Не только китайского, но и местного производства!</p>
                         </div>
                     </div>
@@ -106,9 +107,7 @@
                     <p class="ordering__text">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в Седоне</p>
                     <div class="ordering-layout">
                         <p class="ordering__search">Поиск гостиницы в Седоне</p>
-                        <figure class="ordering__map">
-                            <img class="ordering__map-img" src="img/pict-map.jpg">
-                        </figure>
+                        
                         <form class="ordering-form" action="#" method="post">
                             <label class="ordering-form__date">
                                 <p class="ordering-form__lbl">Дата заезда:</p>
@@ -118,7 +117,7 @@
                                 <p class="ordering-form__lbl">Дата выезда:</p>
                                 <input class="ordering-form__input  ordering-form__input--date" type="text" value="4 июля 2014">
                             </label>
-                            <fieldset class="ordering-form-layout">
+                            <div class="ordering-form-layout">
                                 <div class="ordering-form__number">
                                     <p class="ordering-form__lbl">Взрослые:</p>
                                     <div class="ordering-form__counter">
@@ -135,10 +134,13 @@
                                         <button class="ordering-form__counter-plus">+</button>
                                     </div>
                                 </div>
-                            </fieldset>
+                            </div>
                             <input class="ordering-form__btn" type="submit" value="Найти">
                         </form>
-                    </div>                    
+                    </div>
+                    <figure class="ordering__map">
+                        <div class="ordering__map-img"></div>
+                    </figure>                    
                 </div>
             </main>
 

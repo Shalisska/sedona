@@ -12,7 +12,6 @@ body {
 .layout-center-wrapper {
     display: flex;
     flex-direction: column;
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     .background (@bg-main);
@@ -31,7 +30,7 @@ body {
     &:before {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: 1px;
         left: 0;
         width: 100%;
         height: 57px;
@@ -40,30 +39,42 @@ body {
     }
     
     &__welcome {
-        margin-bottom: 10px;
+        margin: 0 27.5% 10px;
     }
     
     &__to-the {
-        margin-bottom: 52px;
+        margin: 0 18.75% 52px;
     }
     
     &__sedona {
-        margin-bottom: 56px;
+        margin: 0 6.25% 56px;
     }
     
     &__because {
-        margin-bottom: 82px;
+        margin: 0 19.375% 82px;
     }
 }
 
-.header {
+.header {    
+    position: relative;
     background: @bg-main;
     z-index: 20;
 }
 
 .menu {
+    display: flex;
+    
+    &__btn {
+        display: none;
+        width: 50px;
+        height: @height-header;
+        background: url("../img/icon-menu.svg") no-repeat center center;
+        cursor: pointer; 
+    }
+    
     &__list {
         display: flex;
+        width: 100%;
         .reset-ul ();
         
         &-item {
@@ -72,7 +83,9 @@ body {
             
             a {
                 .reset-a ();
-                display: block;                
+                display: block;
+                box-sizing: border-box;
+                height: @height-header;
                 padding: (@font-size * (15px / 14px)) 0;
                 .text-form ();                
             }
@@ -150,6 +163,10 @@ body {
             height: @height-features;
             background: @bg-main;
             
+            .reasons-item__title {
+                position: relative;
+            }
+            
             &-house {                
                 .features-icon ("../img/icon-house.svg");
             }
@@ -166,7 +183,6 @@ body {
         &__title {
             .title ();
             margin: 0 0 (@font-size * (22px / 14px));
-            
         }
         
         &__number,
@@ -211,13 +227,15 @@ body {
     &__map {
         position: relative;
         margin: 0;
-        //background: url("../img/pict-map.jpg") no-repeat center;
         
         &-img {
             position: absolute;
-            top: 0;
+            top: -382px;
             left: 50%;
-            margin-left: -600px;
+            width: 100%;
+            height: 593px;
+            margin-left: -50%;
+            background: url("../img/pict-map.jpg") no-repeat center center;
         }
     }
     
@@ -228,6 +246,7 @@ body {
         padding: (@font-size * (50px / 14px)) 8.8%;
         background: @bg-main;
         box-shadow: 0px 7px 15px 0px rgba(0, 1, 1, 0.15);
+        z-index: 50;
         
         &__date {
             display: flex;
@@ -259,6 +278,8 @@ body {
         }
                 
         &-layout {
+            display: flex;
+            justify-content: space-between;
             margin: 0 0 (@font-size * (54px / 14px));
             padding: 0;
             border: 0;
@@ -267,17 +288,9 @@ body {
         &__number {
             display: flex;
             width: 50%;
-            
-            &:first-child {
-                float: left;
-            }
-            
-            &:last-child {
-                float: right;
-            }
-            
+                    
             .ordering-form__lbl {
-                width: 50%;
+                width: 117px;
                 
                 &--child {
                     padding-left: 21.36%;
@@ -287,8 +300,9 @@ body {
         
         &__counter {
             display: flex;
+            flex-shrink: 0;
             height: (@font-size * (38px / 14px));
-            width: 50%;
+            width: 117px;
             
             button,
             input {
@@ -320,6 +334,8 @@ body {
 
 
 .footer {
+    display: flex;
+    align-items: center;
     position: relative;
     margin-top: (@font-size * (78px / 14px));
     padding: (@font-size * (36px / 14px)) 0;
@@ -341,13 +357,21 @@ body {
     }
     
     .social-btn {
+        display: flex;
+        justify-content: center;
+        
         a {
-            display: inline-block;
+            display: block;
             width: 46px;
             height: 48px;
+            margin-right: 6px;
             background-color: @bg-second;
             background-repeat: no-repeat;
             background-position: center center;
+            
+            &:last-child {
+                margin-right: 0;
+            }
         }
         
         &-twitter {
@@ -368,7 +392,7 @@ body {
         
         & a {
             display: inline-block;
-            margin: 0 13px;
+            margin: 0 3.25%;
             width: 27px;
             height: 33px;
             vertical-align: middle;
@@ -384,8 +408,249 @@ body {
     }
 }
 
-
-
-.social-btn {
+@media (max-width: @break) {
+    .menu {
+        flex-direction: column-reverse;
+        
+        &__btn {
+            display: block;
+            align-self: flex-end;
+        }
+        
+        &__list {
+            flex-direction: column;
+            
+            a {
+                padding-top: (@font-size * (12px / 14px)); 
+                background: @bg-second;
+                color: @color-light;
+                font-size: @font-size--menu--small;
+                box-shadow:
+                    inset 0 1px rgba(255, 255, 255, .2),
+                    inset 0 -1px rgba(1, 1, 1, .2);
+            }
+            
+            &-item:first-child {
+                position: relative;
+                
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 56px;
+                    background: url("../img/icon-cross.svg") no-repeat center center;
+                }
+            }
+            
+            &-item:last-child a {
+                background: linear-gradient(@bg-second 50px, rgba(108, 150, 176, 1));
+                box-shadow: inset 0 1px rgba(255, 255, 255, .2);
+            }
+        }
+    }
     
+    .logo {
+        top: (@height-header * 4);        
+    }
+    
+    .bg-sedona {
+        &:before {
+            height: 27px;
+            background:
+                linear-gradient(to right top, @bg-main 49%, transparent 51%) no-repeat left top,
+                linear-gradient(to left top, @bg-main 49%, transparent 51%) no-repeat right top;
+            background-size: 50% 100%;
+        }
+    }
+
+    .reasons {
+        margin-bottom: 30px;
+        
+        &__title {
+            width: 85%;
+            font-size: 18px;
+            .line-height (26px; 18px);
+        }
+
+        &__view {
+            padding: 0 9.375%;
+            .line-height (26px; 14px);
+        }
+        
+        &-layout {
+            flex-direction: column;
+
+            &:first-of-type .reasons-item:first-child {
+                position: relative;
+
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: -17px;
+                    left: 0;
+                    width: 100%;
+                    height: 17px;
+                    background:
+                        linear-gradient(to right top, @bg-second 49%, transparent 51%) no-repeat left top,
+                        linear-gradient(to left top, @bg-second 49%, transparent 51%) no-repeat right top;
+                    background-size: 50% 100%;
+                }
+            }
+            
+            &:last-of-type .reasons-item:nth-child(2) {
+                position: relative;
+                
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 6.25%;
+                    width: 87.5%;
+                    height: 1px;
+                    background: #d6d6d6;
+                }
+                
+                &:before {top: 0;}
+                
+                &:after {bottom: 0;}
+            }
+        }
+
+        &-item {
+            width: 100%;
+            min-height: 168px;
+            padding: 4.37% 10.9%;
+            
+            &--main {
+                padding: 40px 25px;
+            }
+
+            &--double {
+                background-size: 650px 100%;
+            }
+
+            &--features {
+                height: auto;
+                padding-left: 21.5%;
+                text-align: left;
+            }
+        }
+    }
+    
+    .ordering {
+        &__title {
+            margin-bottom: 25px;
+            font-size: @font-size--title;
+        }
+        
+        &__text {
+            width: auto;
+            margin: 0 9.3% 30px;
+        }
+    }
 }
+
+@media (max-width: @width-form) {
+    .ordering {
+        
+        &-layout {
+            width: 100%;
+        }
+        
+        &-form {
+            padding: 25px 6.25% 50px;
+            
+            &__date {
+                flex-direction: column;
+            }
+
+            &__lbl {
+                width: 100%;
+            }
+            
+            &__input--date {
+                width: 100%;
+            }
+            
+            @media (max-width: 480px) {
+                &__number .ordering-form__lbl--child {
+                    padding: 0 2% 0 0;
+                    text-align: right;
+                }
+            }
+
+            @media (max-width: 455px) {
+                &__lbl {
+                padding-left: 2.56%;
+            }
+                
+                &__number {
+                    flex-direction: column;
+                    width: 117px;
+
+                    .ordering-form__lbl {
+                        width: 100%;
+                        padding-left: 8.55%;
+                        
+                        &--child {
+                            text-align: left;
+                        }
+                    }
+                }
+
+                &__counter {
+                    width: 100%;
+                }
+            }
+        }
+        
+        &__map {
+            height: 360px;
+            
+            &-img {
+                top: 0;
+            }
+        }
+    }
+    
+    .footer {
+        flex-direction: column;
+        margin-top: -22px;
+        padding: 25px 0 20px;
+        
+        .hash-tag-layout,
+        .social-btn,
+        &__copyright {
+            width: 100%;
+        }
+        
+        .hash-tag-layout {
+            margin-bottom: 35px;
+        }
+        
+        .social-btn {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

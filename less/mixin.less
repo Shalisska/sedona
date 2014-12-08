@@ -73,5 +73,14 @@
         height: 76px;
         margin: 0 auto (@font-size * (35px / 14px));
         background: url(@icon) no-repeat center bottom;
+        background-size: contain;
+        
+        @media (max-width: @break) {
+            position: absolute;
+            top: 0;
+            left: -48px;
+            width: 38px;
+            height: 38px;
+        }
     }
 }
