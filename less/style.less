@@ -55,8 +55,7 @@ body {
     }
 }
 
-.header {    
-    position: relative;
+.header {
     background: @bg-main;
     z-index: 20;
 }
@@ -77,11 +76,25 @@ body {
         width: 100%;
         .reset-ul ();
         
+        .l-menu__list-left,
+        .l-menu__list-right {
+            width: (100% / 5 * 2);
+        }
+        
+        .l-menu__list-logo {
+            position: relative;
+            width: (100% / 5);
+        }
+        
+        .l-menu__list{
+            display: flex;
+            .reset-ul ();
+        }
+        
         &-item {
-            justify-content: center;
             flex: 1;
             
-            a {
+            a:not(.logo) {
                 .reset-a ();
                 display: block;
                 box-sizing: border-box;
@@ -128,10 +141,10 @@ body {
     }
     
     &-item {
-        width: (100% / 3);
         box-sizing: border-box;
-        padding: 4.37%;
+        padding: 0 4.37%;
         min-height: @height-item;
+        width: (100% / 3);
         .background (@bg-third);
         color: @color-dark--regular;
         
@@ -144,8 +157,8 @@ body {
         }
         
         &--double {
-            width: (100% * 2 / 3);
             height: @height-item;
+            width: (100% / 3 * 2);
             background-repeat: no-repeat;
             background-position: center center;
             
@@ -157,14 +170,29 @@ body {
                 background-image: url("../img/pict-city.jpg");
             }
         }
+                
+        &__title {
+            .title ();
+            margin: 19.53% 0 (@font-size * (22px / 14px));
+        }
+        
+        &__number,
+        &__text {
+            .text-regular ();
+        }
+        
+        &__text {
+            margin-bottom: 19.53%;
+        }
         
         &--features {
-            padding: 4.66% 4.16%;
+            padding: 0 4.16%;
             height: @height-features;
             background: @bg-main;
             
             .reasons-item__title {
                 position: relative;
+                margin-top: 17%;
             }
             
             &-house {                
@@ -178,21 +206,7 @@ body {
             &-gift {                
                 .features-icon ("../img/icon-gift.svg");
             }
-        }
-        
-        &__title {
-            .title ();
-            margin: 0 0 (@font-size * (22px / 14px));
-        }
-        
-        &__number,
-        &__text {
-            .text-regular ();
-        }
-        
-        &__text {
-            margin-bottom: 0;
-        }
+        }        
     }
 }
 
@@ -420,7 +434,7 @@ body {
         &__list {
             flex-direction: column;
             
-            a {
+            a:not(.logo) {
                 padding-top: (@font-size * (12px / 14px)); 
                 background: @bg-second;
                 color: @color-light;
@@ -430,7 +444,16 @@ body {
                     inset 0 -1px rgba(1, 1, 1, .2);
             }
             
-            &-item:first-child {
+            .l-menu__list-left,
+            .l-menu__list-right {
+                width: 100%;
+            }
+            
+            .l-menu__list {
+                flex-direction: column;
+            }
+            
+            .l-menu__list-left &-item:first-child {
                 position: relative;
                 
                 &:before {
@@ -444,16 +467,19 @@ body {
                 }
             }
             
-            &-item:last-child a {
+            .l-menu__list-right &-item:last-child a {
                 background: linear-gradient(@bg-second 50px, rgba(108, 150, 176, 1));
                 box-shadow: inset 0 1px rgba(255, 255, 255, .2);
-            }
+            }            
         }
     }
     
-    .logo {
-        top: (@height-header * 4);        
+    .l-menu__list-logo {
+        order: 10;
+        align-self: center;
     }
+    
+
     
     .bg-sedona {
         &:before {
@@ -521,10 +547,14 @@ body {
         &-item {
             width: 100%;
             min-height: 168px;
-            padding: 4.37% 10.9%;
+            padding: 30px 10.9%;
             
             &--main {
                 padding: 40px 25px;
+                
+                &__title {
+                    margin-top: 40px;
+                }
             }
 
             &--double {
@@ -535,6 +565,18 @@ body {
                 height: auto;
                 padding-left: 21.5%;
                 text-align: left;
+                
+                .reasons-item__title {
+                    margin-top: 0;
+                }
+            }
+            
+            &__title {
+                margin-top: 0;
+            }
+            
+            &__text {
+                margin-bottom: 0;
             }
         }
     }
