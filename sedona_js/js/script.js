@@ -57,6 +57,7 @@ for (var i = 0; i < counters.length; i++) {
 		}
 	} (i);
 };
+	
 
 })(document);
 
@@ -65,3 +66,85 @@ for (var i = 0; i < counters.length; i++) {
 //<input type="text" name="numeric" size="4" value="555">
 //<input type="button" value="+ 1" onClick="javascript:this.form.numeric.value++;">
 //</form>
+
+(function (document) {
+
+
+var form = document.querySelector('.response');
+
+var data = new FormData(form);	
+var xhr = new XMLHttpRequest ();
+	
+//xhr.open('post', '/echo?' + (new Date()).getTime());
+//	
+//xhr.onreadystatechange = function () {
+//	if (xhr.readyState == 4) {
+//		console.log(xhr.responseText);
+//	}
+//};
+//	
+//xhr.send(data);
+
+
+var area = document.querySelector('.photo-area');
+//var queue = [];
+	
+form.querySelector('.pictures').addEventListener('change', function () {
+	var files = this.files;
+		
+	previewImages (files);		
+});
+						  
+function previewImages (files) {
+	for (var i = 0; i < files.length; i++) {
+		var file = files[i];
+		
+		if (file.type.match(/image.*/)) {
+			var reader = new FileReader();
+				
+			reader.onload = function (event) {
+				var container = document.createElement('div');
+				container.classList.add('photo');
+				area.appendChild(container);
+				
+				var del = document.createElement('a');
+				del.classList.add('delete-photo');
+				container.appendChild(del);
+				
+				var img = document.createElement('img');
+				img.src = event.target.result;
+				img.alt = '';
+				container.appendChild(img);
+			};
+				
+			reader.readAsDataURL(file);
+		}
+	}	
+}	
+	
+	
+	
+	
+	
+	
+	
+})(document);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
