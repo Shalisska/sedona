@@ -319,9 +319,27 @@ body {
         z-index: 50;
         
         &__date {
+			position: relative;
             display: flex;
             margin-bottom: (@font-size * (29px / 14px));
             width: 100%;
+			
+			.icon-icon-calendar {
+				position: absolute;
+				bottom: 7.5px;
+				right: 9.3px;
+				font-size: 21px;
+				color: rgba(0, 0, 0, .2);
+				text-decoration: none;
+				
+				&:hover {
+					color: black;
+				}
+				
+				&:active {
+					color: #81b3d2;
+				}
+			}
         }
         
         &__lbl {
@@ -351,9 +369,6 @@ body {
             position: relative;
             width: 75%;
             padding-right: 38px;
-            background-image: url("../img/icon-calendar.svg");
-            background-repeat: no-repeat;
-            background-position: 97% center;            
         }
                 
         &-layout {
@@ -396,6 +411,15 @@ body {
                 font-size: (@font-size * (21px / 14px));
                 .line-height (26px; 14px);
                 font-weight: bold;
+				outline: none;
+				
+				&:hover {
+					color: black;
+				}
+				
+				&:active {
+					color: #81b3d2;
+				}
             }
         }
         

@@ -375,12 +375,27 @@ body {
   z-index: 50;
 }
 .ordering-form__date {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 29px;
   width: 100%;
+}
+.ordering-form__date .icon-icon-calendar {
+  position: absolute;
+  bottom: 7.5px;
+  right: 9.3px;
+  font-size: 21px;
+  color: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+.ordering-form__date .icon-icon-calendar:hover {
+  color: black;
+}
+.ordering-form__date .icon-icon-calendar:active {
+  color: #81b3d2;
 }
 .ordering-form__lbl {
   -webkit-box-sizing: border-box;
@@ -417,9 +432,6 @@ body {
   position: relative;
   width: 75%;
   padding-right: 38px;
-  background-image: url("../img/icon-calendar.svg");
-  background-repeat: no-repeat;
-  background-position: 97% center;
 }
 .ordering-form-layout {
   display: -webkit-box;
@@ -474,6 +486,13 @@ body {
   font-size: 21px;
   line-height: 1.85714286;
   font-weight: bold;
+  outline: none;
+}
+.ordering-form__counter button:hover {
+  color: black;
+}
+.ordering-form__counter button:active {
+  color: #81b3d2;
 }
 .ordering-form__btn {
   padding: 15px 2%;
