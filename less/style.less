@@ -446,8 +446,9 @@ body {
             height: 48px;
             margin-right: 6px;
             background-color: @bg-second;
-            background-repeat: no-repeat;
-            background-position: center center;
+			.reset-a ();
+			color: white;
+			line-height: 48px;
             
             &:last-child {
                 margin-right: 0;
@@ -455,40 +456,57 @@ body {
 			
 			.btn-activity ();
         }
-        
-        &-twitter {
-            background-image: url("../img/icon-twitter.svg");
-        }
-        
-        &-fb {
-            background-image: url("../img/icon-facebook.svg");
-        }
-        
-        &-play {
-            background-image: url("../img/icon-youtube.svg");
-        }
     }
+	
+	.icon-icon-facebook{
+		font-size: 18px;
+	}	
+	
+		
     
     &__copyright {        
         text-transform: uppercase;
+		vertical-align: middle;
         
         & a {
+			position: relative;
             display: inline-block;
             margin: 0 3.25%;
             width: 27px;
             height: 33px;
-            vertical-align: middle;
-			background-repeat: no-repeat;
-			background-position: center;
+			vertical-align: middle;
+			.reset-a ();
+			color: black;
+			
+			&:before {
+				position: absolute;
+				font-size: 29px;
+			}
+			
+			&:hover:before {
+					color: #81b3d2;
+			}
+			
+			&:active:before {
+				color: #bdbbbc;
+			}
         }
-                
-        &-a {            
-            background: url("../img/logo-glukhanko.svg");            
+    }
+	
+	.icon-logo-glukhanko {
+		&:before {
+			left: 1px;
+			top: 2px;
+			font-size: 29px;
+			}
         }
         
-        &-ha {
-            background: url("../img/logo-htmlacademy.svg");
-        }
+    .icon-logo-htmlacademy {
+		&:before {
+			left: 1px;
+			top: 0;
+			font-size: 33px;
+		}
     }
 }
 
