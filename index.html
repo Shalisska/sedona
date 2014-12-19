@@ -14,21 +14,17 @@
             <header class="header">
                 <nav class="menu">
                     <a class="menu__btn" href="#"></a>
-                    <ul class="menu__list">
-                        <li class="l-menu__list-left">
-                            <ul class="l-menu__list">
-                                <li class="menu__list-item"><a href="#">Информация</a></li>
-                                <li class="menu__list-item"><a href="#">Фото и видео</a></li>
-                            </ul>
-                        </li>
-                        <li class="l-menu__list-logo"><a class="logo" href="#"></a></li>
-                        <li class="l-menu__list-right">
-                            <ul class="l-menu__list">
-                                <li class="menu__list-item"><a href="#">Карта штата</a></li>
-                                <li class="menu__list-item"><a href="#">Гостиницы</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <div class="menu__list">
+                        <ul class="menu__list-part">
+                            <li class="menu__list-item"><a href="#">Информация</a></li>
+                            <li class="menu__list-item"><a href="#">Фото и видео</a></li>
+                        </ul>
+                        <div class="l-menu__list-logo"><a class="logo" href="#"></a></div>
+                        <ul class="menu__list-part">
+                            <li class="menu__list-item"><a href="#">Карта штата</a></li>
+                            <li class="menu__list-item"><a href="#">Гостиницы</a></li>
+                        </ul>
+                    </div>
                 </nav>
                 
             </header>
@@ -36,12 +32,12 @@
 
 
             <main class="main">
-                <figure class="bg-sedona">
+                <div class="bg-sedona">
                     <img class="bg-sedona__welcome" src="img/text-welcome.svg">
                     <img class="bg-sedona__to-the" src="img/text-tothegorgeous.svg">
                     <img class="bg-sedona__sedona" src="img/text-sedona.svg">
                     <img class="bg-sedona__because" src="img/text-becausecanyon.svg">
-                </figure>
+                </div>
                 <div class="reasons">
                     <p class="reasons__title">Седона - небольшой городок в Аризоне, заслуживающий большего!</p>
                     <p class="reasons__view">Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!</p>

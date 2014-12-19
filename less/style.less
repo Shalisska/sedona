@@ -25,20 +25,23 @@ body {
     width: 100%;
     margin: -56px 0 60px;
     padding-top: 132px;
-    background: url("../img/bg-top.jpg") no-repeat center top;
+    background: url("../img/photo-background@1x.jpg") no-repeat center top;
+	background-size: 1200px auto;
+	
+	.retina-2 (url("../img/photo-background@2x.jpg"));
     
     &:before {
         content: '';
         position: absolute;
-        bottom: 1px;
+        bottom: 0;
         left: 0;
         width: 100%;
         height: 57px;
         background: url("../img/bg-top-mask.png") no-repeat center bottom;
         background-size: 100%;
     }
-    
-    &__welcome {
+	
+	&__welcome {
         margin: 0 27.5% 10px;
     }
     
@@ -76,18 +79,9 @@ body {
         width: 100%;
         .reset-ul ();
         
-        .l-menu__list-left,
-        .l-menu__list-right {
-            width: (100% / 5 * 2);
-        }
-        
-        .l-menu__list-logo {
-            position: relative;
-            width: (100% / 5);
-        }
-        
-        .l-menu__list{
+        &-part{
             display: flex;
+			width: (100% / 5 * 2);
             .reset-ul ();
         }
         
@@ -106,6 +100,11 @@ body {
     }
 }
 
+.l-menu__list-logo {
+	position: relative;
+	width: (100% / 5);
+}
+
 .logo {
     position: absolute;
     top: 0;
@@ -113,7 +112,36 @@ body {
     margin-left: -69px;
     width: 138px;
     height: 70px;
-    background: url("../img/label.png") no-repeat center top;
+    background: 
+		url("../img/logo-sedona@1x.png") no-repeat center top,
+		url("../img/form-logo-triangle.svg") no-repeat center top;
+	background-size: 
+		67px 56px,
+		100% 100%;
+}
+
+@media 	(min--moz-device-pixel-ratio: 1.5),
+		(-o-min-device-pixel-ratio: 3/2),
+		(-webkit-min-device-pixel-ratio: 1.5),
+		(min-resolution: 1.5dppx) {
+
+	.logo {
+		background-image: 
+			url("../img/logo-sedona@2x.png"),
+			url("../img/form-logo-triangle.svg");
+	}
+}
+
+@media 	(min--moz-device-pixel-ratio: 2.5),
+		(-o-min-device-pixel-ratio: 5/2),
+		(-webkit-min-device-pixel-ratio: 2.5),
+		(min-resolution: 2.5dppx) {
+
+	.logo {
+		background-image: 
+			url("../img/logo-sedona@3x.png"),
+			url("../img/form-logo-triangle.svg");
+	}	
 }
 
 .main {
@@ -161,13 +189,18 @@ body {
             width: (100% / 3 * 2);
             background-repeat: no-repeat;
             background-position: center center;
+			background-size: 800px auto;
             
             &:first-of-type {
-                background-image: url("../img/pict-bridge.jpg");
+                background-image: url("../img/photo-bridge@1x.jpg");
+				
+				.retina-2 (url("../img/photo-bridge@2x.jpg"));
             }
             
             &:last-of-type {
-                background-image: url("../img/pict-city.jpg");
+                background-image: url("../img/photo-city@1x.jpg");
+				
+				.retina-2 (url("../img/photo-city@2x.jpg"));
             }
         }
                 
@@ -250,6 +283,9 @@ body {
             height: 593px;
             margin-left: -50%;
             background: url("../img/pict-map.jpg") no-repeat center center;
+			background-size: 1200px auto;
+			
+			.retina-2 (url("../img/pict-mapx2.jpg"));
         }
     }
     
@@ -389,15 +425,15 @@ body {
         }
         
         &-twitter {
-            background-image: url("../img/icon-twitter.png");
+            background-image: url("../img/icon-twitter.svg");
         }
         
         &-fb {
-            background-image: url("../img/icon-fb.png");
+            background-image: url("../img/icon-facebook.svg");
         }
         
         &-play {
-            background-image: url("../img/icon-play.png");
+            background-image: url("../img/icon-youtube.svg");
         }
     }
     
@@ -410,14 +446,16 @@ body {
             width: 27px;
             height: 33px;
             vertical-align: middle;
+			background-repeat: no-repeat;
+			background-position: center;
         }
                 
         &-a {            
-            background: url("../img/icon-a.png");            
+            background: url("../img/logo-glukhanko.svg");            
         }
         
         &-ha {
-            background: url("../img/icon-ha.png");
+            background: url("../img/logo-htmlacademy.svg");
         }
     }
 }
@@ -444,16 +482,12 @@ body {
                     inset 0 -1px rgba(1, 1, 1, .2);
             }
             
-            .l-menu__list-left,
-            .l-menu__list-right {
+            &-part {
                 width: 100%;
+				flex-direction: column;
             }
             
-            .l-menu__list {
-                flex-direction: column;
-            }
-            
-            .l-menu__list-left &-item:first-child {
+            &-part:first-of-type &-item:first-child a{
                 position: relative;
                 
                 &:before {
@@ -467,7 +501,7 @@ body {
                 }
             }
             
-            .l-menu__list-right &-item:last-child a {
+            &-part:last-of-type &-item:last-child a {
                 background: linear-gradient(@bg-second 50px, rgba(108, 150, 176, 1));
                 box-shadow: inset 0 1px rgba(255, 255, 255, .2);
             }            
@@ -678,7 +712,7 @@ body {
     }
 }
 
-
+//@import url("img-style.less");
 
 
 

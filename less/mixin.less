@@ -84,3 +84,23 @@
         }
     }
 }
+
+.retina-2 (@img-url) {
+	@media 	(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-resolution: 1.5dppx) {
+				
+		background-image+: @img-url;
+	}
+}
+
+.retina-3 (@img-url) {
+	@media 	(min--moz-device-pixel-ratio: 2.5),
+			(-o-min-device-pixel-ratio: 5/2),
+			(-webkit-min-device-pixel-ratio: 2.5),
+			(min-resolution: 2.5dppx) {
+				
+		background-image: @img-url;
+	}
+}
