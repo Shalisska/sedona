@@ -107,10 +107,13 @@ module.exports = function (grunt) {
 		'clean',
 		'copy',
 		'cssmin',
-		'htmlmin'
+		'htmlmin',
+		'uglify'
 	]);
 	
 	grunt.registerTask('debug', [
+		'less',
+		'autoprefixer',
 		'cmq',
 		'csscomb'
 	]);
