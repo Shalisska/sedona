@@ -78,6 +78,10 @@ body {
         display: flex;
         width: 100%;
         .reset-ul ();
+		
+		&-close {
+			display: none;
+		}
         
         &-part{
             display: flex;
@@ -87,8 +91,20 @@ body {
         
         &-item {
             flex: 1;
+			
+			&.active a {
+					color: #766357;
+					
+					&:hover {
+						color: #604e43;
+					}
+					
+					&:active {
+						color: rgba(118, 99, 87, .3);
+					}
+				}
             
-            a:not(.logo) {
+            a {
                 .reset-a ();
                 display: block;
                 box-sizing: border-box;
@@ -102,25 +118,15 @@ body {
 				
 				&:active {
 					color: rgba(0, 0, 0, .3);
-				}
-				
-				&.active {
-					color: #766357;
-					
-					&:hover {
-						color: #604e43;
-					}
-					
-					&:active {
-						color: rgba(118, 99, 87, .3);
-					}
-				}
+				}			
             }
+			
+			
         }
     }
 }
 
-.l-menu__list-logo {
+.l-logo {
 	position: relative;
 	width: (100% / 5);
 }
@@ -508,7 +514,7 @@ body {
 			}
 			
 			&:hover:before {
-					color: #81b3d2;
+				color: #81b3d2;
 			}
 			
 			&:active:before {
@@ -544,9 +550,39 @@ body {
         }
         
         &__list {
+			position: relative;
             flex-direction: column;
-            
-            a:not(.logo) {
+			
+			&-close {
+				position: absolute;
+				display: block;
+				top: 0;
+				right: 0;
+				width: 50px;
+				height: 56px;
+				background: url("../img/icon-cross.svg") no-repeat center center;
+				z-index: 10;
+			}
+			
+			&-close:hover ~ &-part:first-of-type &-item:first-child {
+				a {
+					background-color: #669ec0;
+					color: white;
+				}
+				
+				&.active a {
+					color: #604e43; 
+				}
+			}
+			
+			&-close:active ~ &-part:first-of-type &-item:first-child {
+				a {
+					background-color: #5496bd;
+					color: rgba(255, 255, 255, .3);
+				}
+			}
+			
+			&-item a {
                 padding-top: (@font-size * (12px / 14px)); 
                 background: @bg-second;
                 color: @color-light;
@@ -563,19 +599,7 @@ body {
 				flex-direction: column;
             }
             
-            &-part:first-of-type &-item:first-child a{
-                position: relative;
-                
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 50px;
-                    height: 56px;
-                    background: url("../img/icon-cross.svg") no-repeat center center;
-                }
-            }
+          
             
             &-part:last-of-type &-item:last-child a {
                 background-image: linear-gradient(transparent 50px, rgba(108, 150, 176, 1));
@@ -584,7 +608,7 @@ body {
         }
     }
     
-    .l-menu__list-logo {
+    .l-logo {
         order: 10;
         align-self: center;
     }
@@ -788,21 +812,6 @@ body {
     }
 }
 
-//@import url("img-style.less");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.hide {
+	display: none;
+}
