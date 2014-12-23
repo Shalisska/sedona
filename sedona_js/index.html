@@ -258,7 +258,16 @@
       </div>
     </div>
   </div>
+  
+  <script id="photo-template" type="text/html">
+  	<div class="photo">
+  		<a href="#" class="delete-photo">удалить</a>
+  		<img src="{{photo}}" alt="" title="">
+  		<p>{{name}}</p>
+  	</div>
+  </script>
 
   <script src="js/script.js"></script>
+  <script src="js/vendors/mustache-1.0.0.js"></script>
 </body>
 </html>
