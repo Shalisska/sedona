@@ -61,11 +61,13 @@
 //
 //})(document);
 
+var queue = [];
+
 (function (document) {
 
 
 	var form = document.querySelector('.response');
-	var queue = [];
+	
 
 	var data = new FormData(form);
 	queue.forEach(function (element) {
@@ -141,23 +143,18 @@
 		}	
 	}
 	
-	function removePreview(link) {
-		var img = link.nextSibling;
-		queue = queue.filter(function(element) {
-			return element.img != img;
-		});
-		img.parentNode.parentNode.removeChild(img.parentNode);
-	};
-	
-	
-	
-	
-	
-	
+
+
 	
 })(document);
 
-
+function removePreview(link) {
+	var img = link.nextSibling;
+	queue = queue.filter(function(element) {
+		return element.img != img;
+	});
+	img.parentNode.parentNode.removeChild(img.parentNode);
+};
 
 
 
