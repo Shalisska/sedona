@@ -65,14 +65,12 @@
 
 
 	var form = document.querySelector('.response');
-	var area = document.querySelector('.photo-area');
-
 	var queue = [];
 
 	var data = new FormData(form);
-//	queue.forEach(function (element) {
-//		data.append('pictures', element.file);
-//	});
+	queue.forEach(function (element) {
+		data.append('pictures', element.file);
+	});
 
 	var xhr = new XMLHttpRequest();
 	
@@ -119,23 +117,37 @@
 				
 				
 				
-				
+					var area = document.querySelector('.photo-area');
 					var template = document.querySelector('#photo-template').innerHTML;
 				
 					var html = Mustache.render(template, {
 						photo: event.target.result,
 						name: file.name
 					});
-
-				area.innerHTML = area.innerHTML + html;	
+					
+					var div = document.createElement('div');
+					div.classList.add('photo');
+					div.innerHTML = html;
+					
+					area.appendChild(div);
+					
+					var img = div.querySelector('img');
 				
-//					queue.push ({file: file, img: img});
+					queue.push ({file: file, img: img});
 				};
 
 				reader.readAsDataURL(file);
 			}
 		}	
-	}	
+	}
+	
+	function removePreview(link) {
+		var img = link.nextSibling;
+		queue = queue.filter(function(element) {
+			return element.img != img;
+		});
+		img.parentNode.parentNode.removeChild(img.parentNode);
+	};
 	
 	
 	
