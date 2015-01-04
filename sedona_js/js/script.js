@@ -76,15 +76,15 @@ var queue = [];
 
 	var xhr = new XMLHttpRequest();
 	
-//xhr.open('post', '/echo?' + (new Date()).getTime());
-//	
-//xhr.onreadystatechange = function () {
-//	if (xhr.readyState == 4) {
-//		console.log(xhr.responseText);
-//	}
-//};
-//	
-//xhr.send(data);
+xhr.open('post', '/echo?' + (new Date()).getTime());
+	
+xhr.onreadystatechange = function () {
+	if (xhr.readyState == 4) {
+		console.log(xhr.responseText);
+	}
+};
+	
+xhr.send(data);
 
 
 	form.querySelector('.pictures').addEventListener('change', function () {
