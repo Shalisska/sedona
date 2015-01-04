@@ -1,0 +1,120 @@
+@import url("variables.less");
+
+
+.box-size (@width: auto; @margin-bottom: 10px; @padding: (@font-size * (20px / 14px)) 20px) {
+    display: block;
+    box-sizing: border-box;
+    width: @width;
+    margin-bottom: @margin-bottom;
+    padding: @padding;
+}
+
+.reset-ul (@list-style: none; @li-padding: 0; @li-margin: 0) {
+    list-style: @list-style;
+    margin: @li-margin;
+    padding: @li-padding;    
+}
+
+.reset-a () {
+    text-decoration: none;
+    color: inherit;
+}
+ 
+.clearfix () {
+    content:'';
+    display:table;
+    clear:both;
+}
+
+.background (@value) {
+    background+: @value;
+    
+    & when (@value = @bg-main), (@value = @bg-third), (@value = @bg-footer) {    
+        color: @color-dark;
+  }
+    & when (@value = @bg-second), (@value = @bg-order) {    
+        color: @color-light;
+  }    
+}
+
+.line-height (@a; @b) {
+    line-height: unit((@a / @b));
+}
+
+.text-form () {
+    font-size: @font-size;
+    .line-height (26px; 14px);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.title () {
+    color: @color-dark;
+    font-size: @font-size--title;
+    .line-height (26px; 21px);
+    font-weight: bold;
+}
+
+.text-regular () {
+    .line-height (21px; 14px);
+}
+
+.btn-form () {
+    box-sizing: border-box;
+    background: @bg-base;
+    border: none;
+}
+
+.features-icon (@icon) {
+    &:before {
+        content: '';
+        display: block;
+        width: 76px;
+        height: 76px;
+        margin: 0 auto (@font-size * (35px / 14px));
+        background: url(@icon) no-repeat center bottom;
+        background-size: contain;
+        
+        @media (max-width: @break) {
+            position: absolute;
+            top: 0;
+            left: -48px;
+            width: 38px;
+            height: 38px;
+        }
+    }
+}
+
+.retina-2 (@img-url) {
+	@media 	(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-resolution: 1.5dppx) {
+				
+		background-image+: @img-url;
+	}
+}
+
+.retina-3 (@img-url) {
+	@media 	(min--moz-device-pixel-ratio: 2.5),
+			(-o-min-device-pixel-ratio: 5/2),
+			(-webkit-min-device-pixel-ratio: 2.5),
+			(min-resolution: 2.5dppx) {
+				
+		background-image: @img-url;
+	}
+}
+
+.btn-activity () {
+	outline: none;
+	
+	&:hover {
+		color: white;
+		background-color: #669ec0;
+	}
+	
+	&:active {
+		background-color: #5496bd;
+		color: rgba(255, 255, 255, .3);
+	}
+}
